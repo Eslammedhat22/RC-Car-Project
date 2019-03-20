@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RC Car</title>
+	<script type="text/javascript"> src="bootstrap/bootstrap.min.js"</script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+
+</head>
+<body onload="myFunction()">
+
+<script>
+function myFunction() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+</script>
+
+<!-- Nav Bar -->
+<div id="Hmenu" class="nav-bar">
+	<ul>
+		<li><img width="45px" src="images/CPBS_logo_2.png"></li>
+		<li>Home</li>
+		<li>Team</li>
+		<li>Tutorial</li>
+		<li>Sensors</li>
+		<li>Contact Us</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	$('#Hmenu ul li:nth-child(2)').click(function(){
+      
+      $('html, body').animate({scrollTop: 0});
+    }); 
+    
+    $('#Hmenu ul li:nth-child(3)').click(function(){
+    
+        $('html, body').animate({ scrollTop: $('#team').offset().top } );
+    }); 
+    
+    $('#Hmenu ul li:nth-child(4)').click(function(){
+        $('html, body').animate({ scrollTop: $('#tutorial').offset().top } );
+
+    }); 
+    $('#Hmenu ul li:nth-child(5)').click(function(){
+       $('html, body').animate({ scrollTop: $('#sensors').offset().top } );
+
+    }); 
+    $('#Hmenu ul li:nth-child(6)').click(function(){
+      $('html, body').animate({ scrollTop: $('#contact1').offset().top } );
+
+    }); 
+
+
+	</script>
+
+<!-- HOME -->
+<main>
+<div id="home">
+
+	<div id="maintxt"><h1><img width="90px"  src="images/CPBS_logo_2.png"> RC <span>Car</span> </h1></div>
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <img width="800px" height="400px" src="images/c1.jpg" style="width:100%">
+		  <div class="text"></div>
+		</div>
+
+		<div class="mySlides fade">
+		  <img width="800px" height="400px" src="images/c2.jpg" style="width:100%">
+		  <div class="text"></div>
+		</div>
+
+		<div class="mySlides fade">
+		  <img width="800px" height="400px" src="images/c4.jpg" style="width:100%">
+		  <div class="text"></div>
+		</div>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		</div>
+
+		<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		    var i;
+		    var slides = document.getElementsByClassName("mySlides");
+		    var dots = document.getElementsByClassName("dot");
+		    for (i = 0; i < slides.length; i++) {
+		       slides[i].style.display = "none";  
+		    }
+		    slideIndex++;
+		    if (slideIndex> slides.length) {slideIndex = 1}    
+		    for (i = 0; i < dots.length; i++) {
+		        dots[i].className = dots[i].className.replace(" active", "");
+		    }
+		    slides[slideIndex-1].style.display = "block";  
+		    dots[slideIndex-1].className += " active";
+		    setTimeout(showSlides, 3000); // Change image every 3 seconds
+		}
+		</script>
+</div>
+</main>
+
+<!-- Team -->
+
+<div id="team">
+	<h1><img width="70px" src="images/CPBS_logo_2.png">Te<span>am</span> </h1>
+	<table>
+		<tr>
+			<td> <img class="img-circle" src="images/h.jpg"></td>
+			<td> <img class="img-circle" src="images/esk.jpg"></td>
+			<td> <img class="img-circle" src="images/ash.jpg"></td>
+			<td> <img class="img-circle" src="images/ea.jpg"></td>
+			<td> <img class="img-circle" src="images/ek.jpg"></td>
+		</tr>
+		<tr>
+			<td>Eslam Hosham <br> <span>Ultrasonic</span></td>
+			<td>Ismaeel Khaled <br> <span>LDR</span></td>
+			<td>Ashraf Gamal <br> <span>Light Follower</span></td>
+			<td>Eslam Alaa <br> <span>Tempreture</span></td>
+			<td>Eslam Khaled <br> <span>Sound</span></td>
+		</tr>
+		<tr>
+			<td> <img class="img-circle" src="images/af.jpg"></td>
+			<td> <img class="img-circle" src="images/am.jpg"></td>
+			<td> <img class="img-circle" src="images/bs.jpg"></td>
+			<td> <img class="img-circle" src="images/em.jpg"></td>
+			<td> <img class="img-circle" src="images/ak.jpg"></td>
+		</tr>
+		<tr>
+			<td>Amira Fareed <br> <span>Flame</span></td>
+			<td>Ahmed Mamdouh <br> <span>Ultrasonic</span></td>
+			<td>Basma Saeed <br> <span>Line Follower</span></td>
+			<td>Eslam Medhat <br> <span>PIR</span></td>
+			<td>Akram Khaled <br> <span>Piezo</span></td>
+		</tr>
+
+	</table>
+</div>
+
+<!-- Tutorial -->
+<div id="tutorial">
+	<h1> <img width="70px" src="images/CPBS_logo_2.png">Tutorial </h1>
+	<img width="300px" height="200px" style="float: right; margin-right: 20px; border: 6px solid #50afd1;" src="images/c1.jpg">
+
+	<div id="tut">
+	<!-- RC car Tutorial-->
+		<h3 style="font-weight: bold"> The RC car is controlled using an on android via Bluetooth, with integration of many sensors making it capable of:</h3>
+		<ul style="font-size: 15px">
+			<li>Measuring ambient temperature and adjusting the temperature inside car using an Ac system accordingly.</li>
+			<li>Adjustable the intensity of head/ backlights according to the lighting conditions of the environment.</li>
+			<li>Detecting a light source and following it via a light sensor. </li>
+			<li>Following a line drawn on the ground beneath it. </li>
+			<li>Detecting a nearby fire hazard and issuing a warning. </li>
+			<li>Avoid nearby obstacles using an ultrasonic sensor. </li>
+			<li>Detecting the vibration of the car and issuing a warning in highly vibration. </li>
+			<li>Detecting the slope of the car and issuing a warning in highly vibration.</li>
+			<li>Detecting the L.B and make indication.</li>
+			<li>Detect a movable object issuing a horn.</li>
+			<li>The car moves when detecting sound.</li>
+		</ul>	
+
+		<h4>For the Code click <a target="_blank" href="https://drive.google.com/file/d/0Bym5rIAyEpVUeFpKUk1GMnNxbEU/view?usp=sharing">here</a> </h4>
+
+	<!-- SENSORS Tutorial -->
+		<h3 style="font-weight: bold;">Sensors</h3>
+		<ul style="font-size: 17px; ">
+		<!-- Temperature sensor -->
+
+			<li style="font-weight: bold;">Displaying temperature and battery’s voltage </li>
+			<ul>
+				<li style="font-size: 17px;font-weight: bold;">design</li> <p>Protus file <a target="_blank" href="https://drive.google.com/file/d/0Bym5rIAyEpVUWFpxZ29fUURId2M/view?usp=sharing ">here</a></p><img width="700px" height="500px" src="images/ts.png">
+
+				<li style="font-size: 17px;font-weight: bold;">Temperature </li><p>1-Target: <br>	A) display the temperature in Celsius on LCD <br>	B)	if the temperature is more than 40 C the fan will be turned on and turned off if the temperature is less than 35 <br> </p>
+
+				<li style="font-size: 17px;font-weight: bold;">Battery’s voltage </li><br><p>1-Target <br>A)	Display the battery’s voltage on LCD <br>B)	Indicate the low battery <br> 2-	Sensor :<br> Voltage divider “ the Arduino reads one over three of battery voltage and the the code will multiply it by 3 then display the result    ”  “in our case we use 12v battery “</p>
+			</ul>
+			<hr>
+
+		<!-- vibration sensor-->
+			
+			<li style="font-weight: bold;"> Vibration sensor :</li> <p>vibrations is considered its input and it converts this input into voltage as an output which is put into a led .<br>This sensor can be used in the vehicles which carry glass and ceramic to alarm the driver to drive slowly in order to protect the cargo from destroying</p><img width="450px" height="300px" src="images/akt.jpg">
+			<hr>
+
+		<!-- Flame sensor-->
+
+			<li style="font-weight: bold;"> Flame sensor  :</li>
+			<p>-Detects a flame or a light source of a wavelength in the range of 760nm-1100 nm.<br>-Detection range: up to 100 cm.<br>-Adjustable detection range.<br>-Detection angle about 60 degrees, it is sensitive to the flame spectrum.</p>
+			<img src="images/aft.jpg">
+			<hr>
+
+		<!-- PIR sensor-->
+
+			<li style="font-weight: bold;">PIR sensor</li>
+			<p>Motion Detector Sensor, it detects the motion of a human or an animal ,it's used as warnning that someone is passing in front of the car so a buzzer is used to warn the driver</p> <img width="550px" height="300px" src="images/emt.jpg">
+			<hr>
+
+		<!-- Line follower sensor -->
+
+			<li style="font-weight: bold;">Line follower sensor</li>
+			<p>The line follower sensor gives the car the ability to detect lines by detecting the light coming from its own infrared LED <br> When light fall on a white surface it is almost full reflected and in case of black surface light is completely absorbed</p>
+			<img width="300px" height="250px" style="padding: 5px" src="images/bs1.gif">
+			<img width="300px" height="250px" style="padding: 5px" src="images/bs2.gif">
+			<img width="300px" height="250px" style="padding: 5px" src="images/bs3.gif">
+			<img width="300px" height="250px" style="padding: 5px" src="images/bs4.gif">
+			<hr> 
+
+		<!-- LDR sensor -->
+
+			<li style="font-weight: bold;">LDR sensor</li>
+			<p>Using the dependency of the LDR on light, as the light intensity changes, the resistance of the LDR changes, and that can be translated into controlling the lights of the car depending on the lighting condition of the environment.</p> 
+			<img src="images/ekt.jpg">
+			<hr>
+
+		<!-- light follower sensor -->
+
+			<li style="font-weight: bold;">Light follower sensor</li> 
+			<p>This module allows you to detect when sound has exceeded a set point you select.  Sound is detected via a microphone and fed into an LM393 op amp.<br>The sound level set point is adjusted via an on board potentiometer.    When the sound level exceeds the set point, an LED on the module is illuminated and the output is sent low.</p>
+			<img src="images/ekht.png">
+			<hr>
+
+		<!-- tilt sensor -->
+
+			<li style="font-weight: bold;">Tilt sensor</li>
+			<p>It can detect when it is tilted,contains a small metal ball that will complete a circuit depending on where it is in the sensor. Because the sensor is very basic,<br>it can only detect large changes in its tilt, and cannot measure the angle of its tilt.</p>
+			<img src="images/amt.gif">
+			<hr>
+
+			<li style="font-weight: bold;"></li>
+		</ul>
+
+
+	</div>
+		<img width="300px" height="200px" style="float: right; margin-top: 20px; margin-right: 20px; border: 6px solid #50afd1;" src="images/c2.jpg">
+
+
+</div>
+
+<!-- Sensors-->
+<div id="sens1">
+<div id="sensors">
+	<h1><img width="70px" src="images/CPBS_logo_2.png">Sensors</h1>
+
+
+<table>
+		<tr>
+			<td> <img class="img-circle" src="images/hs.jpg"></td>
+			<td> <img class="img-circle" src="images/esks.jpg"></td>
+			<td> <img class="img-circle" src="images/esks.jpg"></td>
+			<td> <img class="img-circle" src="images/eas.jpg"></td>
+			<td> <img class="img-circle" src="images/eks.jpg"></td>
+		</tr>
+		<tr>
+			<td>Ultrasonic<br> <span>2 Ultrasonic Device is used to detect objects in the front and Right side and avoid moving  in the side where obstacle doesn't exist</span></td>
+			<td>LDR<br> <span>Using the dependency of the LDR on light, as the light intensity changes, the resistance of the LDR changes, and that can be translated into controlling the lights of the car depending on the lighting condition of the environment.</span></td>
+			<td>Light Follower<br> <span>text here text here textext here text here text here text here text here  text here  tex</span></td>
+			<td>Tempreture<br> <span>Displaying the temperature and battery's voltage</span></td>
+			<td>Sound<br> <span>text here text here textext here text here text here text here text here  text here  tex</span></td>
+		</tr>
+		<br><br><br>
+		<tr>
+			<td> <img class="img-circle" src="images/afs.jpg"></td>
+			<td> <img class="img-circle" src="images/ams.jpg"></td>
+			<td> <img class="img-circle" src="images/bss.jpg"></td>
+			<td> <img class="img-circle" src="images/ems.jpg"></td>
+			<td> <img class="img-circle" src="images/aks.jpg"></td>
+		</tr>
+		<tr>
+			<td>Flame<br> <span>It detects fire and turn on an LED whenever there's a close fire </span></td>
+			<td>Tilt<br> <span>It can detect when it is tilted,contains a small metal ball that will complete a circuit depending on where it is in the sensor. Because the sensor is very basic, it can only detect large changes in its tilt, and cannot measure the angle of its tilt.</span></td>
+			<td>Line Follower<br> <span>It gives the car the ability to detect lines by detecting the light coming from its own infrared LED, When light fall on a white surface it is almost full reflected and in case of black surface light is completely absorbed</span></td>
+			<td>PIR<br> <span>Motion Detector Sensor, it detects the motion of a human or an animal ,it's used as warnning that someone is passing in front of the car so a buzzer is used to warn the driver</span></td>
+			<td>Piezo<br> <span>A vibration sensor that detects any vibration in the car and sends an alarm represented in an RGB light </span></td>
+		</tr>
+
+	</table>
+</div>
+</div>
+
+<!-- Contact Us-->
+<div id="contact1">
+	<h1><img width="70px" src="images/CPBS_logo_2.png">Contact Us </h1>
+	<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Quick Contact</h3>
+    <h4>Contact us today, and get reply with in 24 hours!</h4>
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+ 
+  
+</div>
+<div id="Ccontact">
+       <ul>
+         <li> <img src="images/544.png" width="47" height="45"> 
+          <h3 > Contact@Rccar.com</h3> </li>
+
+          <li> <img src="images/555.png" width="47" height="47">
+          <h3 >002-23456789</h3> </li>
+
+          <li> <img src="images/56.png" width="35" height="48">
+          <h3>17 Cairo, Egypt</h3> </li>
+
+       </ul>   
+</div>
+<div id="Csocial" >
+
+       <ul>
+
+       
+         <li> 
+         
+
+         <a href="https://www.twitter.com/" target="_blank">
+          <img id="ctw2" src="images/512.png" width="200" height="80"> 
+          </a> 
+
+          <a href="https://www.facebook.com/" target="_blank">
+          <img id="cfb1" src="images/57.png" width="80" height="80"> 
+          </a>
+          </li> 
+
+           <li> <a href="https://www.twitter.com/" target="_blank">
+           <img id="ctw1" src="images/58.png" width="80" height="80"> 
+           </a>
+
+           <a href="https://www.facebook.com/" target="_blank" >
+           <img id="cfb2" src="images/511.png" width="200" height="80"> 
+           </a>
+
+           
+           </li>
+         
+
+           </ul>
+</div>
+
+
+</div>
+</body>
+</html>
